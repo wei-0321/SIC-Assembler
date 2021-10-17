@@ -3,13 +3,18 @@ A simple implementation of SIC assembler, written in python.
 
 
 # Overview 
-(not finished yet)
+Simplified Instructional Computer (SIC) is a hypothetical computer that includes the
+hardware features most often found on real machines. 
+
+There are two versions of SIC,
+1. SIC standard Model
+2. SIC/XE (extra equipment or expensive)
+
+In this repository, I implement the assembler of the former.
 
 # Requirements 
-(not finished yet)
-
 packages:
-- 
+- numpy
 
 # Usage 
 (not finished yet)
@@ -38,7 +43,16 @@ packages:
 (not finished yet)
 
 ```
-(Path)                                	(Description)
-SIC-Assembler                           Main folder     
+(Path)                                	 (Description)
+SIC-Assembler                            main folder     
 │  │
-│  ├ 
+│  ├ .py                                 main program
+│  │
+│  ├ input                               input directory
+│  │  │
+│  │  ├ example.txt                      the file you want to process
+│  │
+│  ├ output                              output directory
+│  │  │
+│  │  ├ example_result.txt               output result
+│  │
