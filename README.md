@@ -12,13 +12,24 @@ There are two versions of SIC,
 
 In this repository, I implement the assembler of the former.
 
+SIC instruction format : 
+| Opcode : 8bits | x : 1bit | address : 15bits |
+| ---| ---- | ---- |
+
+demo picture : 
+
+<pre>
+                    input                                                       output(result)
+</pre>
+
+![image](https://user-images.githubusercontent.com/71260071/137664233-67934211-c964-4e86-b524-6075893e0cca.png)
+
+
 # Requirements 
 packages:
 - numpy
 
 # Usage 
-(not finished yet)
-
 1.Open git bash. 
 
 2.Change the diretory where you want to do download this repository.
@@ -35,18 +46,16 @@ packages:
 ```
 5.Execute the program.
 ```
-> python .py
+> python SIC.py
 ```
 
 
 # Project Structure
-(not finished yet)
-
 ```
 (Path)                                	 (Description)
 SIC-Assembler                            main folder     
 │  │
-│  ├ .py                                 main program
+│  ├ SIC.py                              main program
 │  │
 │  ├ input                               input directory
 │  │  │
