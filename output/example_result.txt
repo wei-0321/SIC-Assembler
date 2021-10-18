@@ -1,0 +1,45 @@
+          COPY      START     0                   
+0000      FIRST     STL       RETADR    140033    
+0003      CLOOP     JSUB      RDREC     481039    
+0006                LDA       LENGTH    000036    
+0009                COMP      ZERO      280030    
+000C                JEQ       ENDFIL    300015    
+000F                JSUB      WRREC     481061    
+0012                J         CLOOP     3C0003    
+0015      ENDFIL    LDA       EOF       00002A    
+0018                STA       BUFFER    0C0039    
+001B                LDA       THREE     00002D    
+001E                STA       LENGTH    0C0036    
+0021                JSUB      WRREC     481061    
+0024                LDL       RETADR    080033    
+0027                RSUB                4C0000    
+002A      EOF       BYTE      C’EOF’    454F46    
+002D      THREE     WORD      3         000003    
+0030      ZERO      WORD      -7        FFFFF9    
+0033      RETADR    RESW      1                   
+0036      LENGTH    RESW      1                   
+0039      BUFFER    RESB      4096                
+1039      RDREC     LDX       ZERO      040030    
+103C                LDA       ZERO      000030    
+103F      RLOOP     TD        INPUT     E0105D    
+1042                JEQ       RLOOP     30103F    
+1045                RD        INPUT     D8105D    
+1048                COMP      ZERO      280030    
+104B                JEQ       EXIT      301057    
+104E                STCH      BUFFER,X  548039    
+1051                TIX       MAXLEN    2C105E    
+1054                JLT       RLOOP     38103F    
+1057      EXIT      STX       LENGTH    100036    
+105A                RSUB                4C0000    
+105D      INPUT     BYTE      X’F1’     F1        
+105E      MAXLEN    WORD      4096      001000    
+1061      WRREC     LDX       ZERO      040030    
+1064      WLOOP     TD        OUTPUT    E01079    
+1067                JEQ       WLOOP     301064    
+106A                LDCH      BUFFER,X  508039    
+106D                WD        OUTPUT    DC1079    
+1070                TIX       LENGTH    2C0036    
+1073                JLT       WLOOP     381064    
+1076                RSUB                4C0000    
+1079      OUTPUT    BYTE      X’05’     05        
+107A                END       FIRST               
