@@ -16,7 +16,7 @@ class Sic:
          "STSW" : "E8", "STX" : "10", "SUB" : "1C", "TD" : "E0", "TIX" : "2C", "WD" : "DC"               
         }
         self.operation = False   #檢查機制(若是程式碼已經出錯  後面就不用再執行)
-        self.result = ""
+        self.result = "%-10s%-10s%-10s%-10s%-10s" % ("(LOC)", "(Symbol)", "(OP code)", "(Operand)", "(Object Code)") + "\n"
     def is_directive(self, code):   #判斷是否為虛指令
         if code in self.directive_list:
             return True

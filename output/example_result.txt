@@ -1,3 +1,4 @@
+(LOC)     (Symbol)  (OP code) (Operand) (Object Code)
           COPY      START     0                   
 0000      FIRST     STL       RETADR    140033    
 0003      CLOOP     JSUB      RDREC     481039    
